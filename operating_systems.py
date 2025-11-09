@@ -1,11 +1,12 @@
+import platform
 import os
 
-os.chdir("/home/nsk")
-for dirs in os.listdir():
-    if  not dirs.startswith("."):
-        print(dirs)
-print("."*50)
-print(os.system("cat /etc/os-release"))
-print(os.system("uname -r "))
-print(os.system("ps -aux"))
+def system_info():
+    print(f"System: {platform.system()}")
+    print(f"Node Name: {platform.node()}")
+    print(f"Release: {platform.release()}")
+    print(f"Version: {platform.version()}")
+    print(f"Machine: {platform.machine()}")
 
+# Example usage
+system_info()
